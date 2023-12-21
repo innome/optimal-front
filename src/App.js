@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Landing from './components/Landing'; // Asegúrate de que el componente Landing está correctamente importado
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import DashboardContent from './components/content/Dashboard';
+import Profile from './components/content/Profile';
+import Settings from './components/content/Settings';
+import './css/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        {/* <Header /> */}
+        {/* Usa Routes en lugar de Switch */}
+        <Routes>
+        <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<DashboardContent />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
+        {/* <Footer /> */}
+      </div>
+    </Router>
   );
 }
 

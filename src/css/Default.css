@@ -1,0 +1,13 @@
+.default-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Ajusta la altura según sea necesario */
+    text-align: center;
+  }
+  
+  .default-container p {
+    font-size: 1.2em; /* Ajusta el tamaño de fuente según sea necesario */
+    /* Agrega más estilos si es necesario */
+  }
+  

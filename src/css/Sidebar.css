@@ -1,0 +1,68 @@
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    transition: width 0.3s ease;
+    overflow: hidden; /* Asegura que el contenido interno no se desborde */
+    /* Otros estilos... */
+  }
+  
+  .sidebar.open {
+    width: 0px; /* Anchura cuando está colapsado */
+    /* Otros estilos... */
+  }
+  
+  /* Estiliza la lista para que sea más estética */
+  .sidebar ul {
+    list-style-type: none; /* Remueve los puntos de los elementos de lista */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estiliza cada enlace de la lista */
+  .sidebar ul li {
+    margin: 8px 0; /* Añade un margen arriba y abajo para cada elemento de lista */
+  }
+  
+  .sidebar ul li a {
+    display: block;
+    padding: 12px 20px; /* Añade padding para hacer los enlaces más grandes */
+    text-decoration: none;
+    color: #333; /* Color del texto de los enlaces */
+    background-color: #f4f4f4; /* Color de fondo por defecto de los enlaces */
+    border-radius: 4px; /* Bordes redondeados para los recuadros */
+    transition: background-color 0.2s ease-in-out; /* Transición suave para el cambio de fondo */
+  }
+  
+  /* Esconde los enlaces cuando el Sidebar esté colapsado */
+  .sidebar.open ul li a {
+    transform: translateX(-200px); /* Desplaza los enlaces fuera del área visible */
+    opacity: 0; /* Los hace transparentes */
+  }
+  
+  .sidebar ul li a.selected,
+  .sidebar ul li a:hover {
+    background-color: #ddd; /* Color de fondo para enlace seleccionado o en hover */
+  }
+  /* Estilos existentes... */
+
+/* Media queries para tablets */
+@media (max-width: 768px) {
+    .sidebar {
+      width: 150px; /* Sidebar más estrecho para tablets */
+    }
+  
+    .sidebar.open {
+      width: 0; /* Sidebar completamente colapsado en estado abierto para tablets */
+    }
+    
+    /* Ajusta la visibilidad de los enlaces del sidebar */
+    .sidebar.open ul li a {
+      transform: translateX(-150px); /* Desplaza los enlaces fuera del área visible */
+      opacity: 0;
+    }
+  
+    .navbar {
+      padding: 10px; /* Menor padding para el navbar en tablets */
+    }
+  }
+  

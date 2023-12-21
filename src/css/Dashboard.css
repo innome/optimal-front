@@ -1,0 +1,40 @@
+/* Dashboard.css */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .dashboard-header {
+    grid-area: header;
+
+    h1{
+        color: black;
+    }
+
+    /* estilos de tu header */
+  }
+  
+  .dashboard-main {
+    grid-area: main;
+    /* estilos del área principal del dashboard */
+  }
+  
+  .dashboard-section {
+    /* estilos de cada sección modular dentro del dashboard */
+  }
+  
+  .dashboard-sidebar {
+    grid-area: sidebar;
+    /* estilos de la barra lateral */
+  }
+  
+  .dashboard-footer {
+    grid-area: footer;
+    /* estilos del footer */
+  }
+  
+.dashboard-body {
+  display: flex;
+  flex: 1;
+}

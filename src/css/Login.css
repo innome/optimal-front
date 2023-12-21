@@ -1,0 +1,84 @@
+/* Contenedor principal que cubre toda la pantalla */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #131313; 
+  }
+  
+  /* La tarjeta de inicio de sesión */
+  .login-card {
+    padding: 40px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 4px rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para dispositivos grandes */
+    color: white;
+    text-align: center; /* Centra el texto de la tarjeta */
+  }
+  
+  /* Estilos para los grupos de entrada */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    border: 1px solid #ddd;
+    background: transparent;
+    border-radius: 5px;
+  }
+  
+  /* Botón de inicio de sesión con estilos de transparencia */
+  .form-footer {
+    margin-top: 20px; /* Espacio adicional por encima del pie del formulario */
+  }
+  
+  /* Estilos para el botón de inicio de sesión */
+  .login-button2 {
+    width: 100%;
+    padding: 10px 20px;
+    border: 2px solid white; 
+    border-radius: 5px;
+    background-color: transparent; /* Fondo transparente */
+    color: white;
+    margin-bottom: 10px; /* Espacio debajo del botón */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Efecto de transición suave para el hover */
+  }
+  
+  .login-button2:hover {
+    background-color: rgba(73, 72, 72, 0.2); /* Ligero fondo blanco al hacer hover */
+  }
+  
+  /* Estilos para el enlace de olvidar contraseña */
+  .forgot-password-link {
+    color: white;
+    text-decoration: none;
+    display: inline-block; /* Para aplicar márgenes */
+    text-align: center; /* Centra el texto del enlace */
+    margin-top: 10px; /* Espacio por encima del enlace */
+  }
+  
+  .forgot-password-link:hover {
+    text-decoration: underline; /* Subraya el enlace al hacer hover */
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .login-card {
+      padding: 20px;
+      margin: 0 20px; /* Espaciado lateral en pantallas pequeñas */
+    }
+  }
+  

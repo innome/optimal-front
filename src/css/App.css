@@ -1,0 +1,165 @@
+/* Reset básico para asegurarse de que no hay márgenes ni rellenos por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+html, body {
+  height: 100%;
+  overflow: hidden; /* Previene el scroll */
+}
+
+/* Estilos para el header */
+header {
+  text-align: center;
+  padding: 20px;
+  height: 50vh;
+  display: flex; /* Usa flexbox para alinear los elementos */
+  justify-content: space-between; /* Separa el título y el botón de login */
+  align-items: center; /* Alinea los elementos verticalmente */
+  
+}
+
+h1{
+  color: white;
+}
+
+/* Estilos para el header que ocupa toda la pantalla */
+.full-screen-header {
+  width: 100vw; /* 100% del ancho del viewport */
+  height: 100vh; /* 100% del alto del viewport */
+  display: flex;
+  flex-direction: column; /* Los elementos están uno debajo del otro */
+  justify-content: center; /* Centrar contenido verticalmente */
+  align-items: center; /* Centrar contenido horizontalmente */
+  text-align: center;
+  background-color: #131313; /* Ajusta el color de fondo según tu diseño */
+}
+
+/* Estilos para la sección */
+section {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+/* Estilos para el footer */
+footer {
+  
+  text-align: center;
+  padding: 20px;
+  background-color: transparent; /* Fondo transparente */
+  color: white; /* Cambia el color del texto si es necesario */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilos para enlaces en el footer */
+footer a {
+  color: white; /* Cambia el color del enlace si es necesario */
+  margin: 0 10px; /* Espaciado entre enlaces */
+  text-decoration: none; /* Opcional: quitar el subrayado de los enlaces */
+}
+
+
+/* Estilos para el botón de login */
+.login-button {
+  padding: 10px 20px;
+  background-color: transparent; /* Fondo transparente */
+  color: white;
+  border: 2px solid white; /* Borde blanco */
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute; /* Posicionamiento absoluto */
+  top: 20px; /* Ajusta la distancia desde la parte superior */
+  transition: background-color 0.3s; /* Efecto de transición suave para el hover */
+  right: 20px; /* Ajusta la distancia desde la derecha */
+}
+
+.login-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Ligero fondo blanco al hacer hover */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 600px) {
+  /* Estilos para pantallas pequeñas */
+  header, section, footer {
+    padding: 10px;
+  }
+
+  section {
+    margin: 10px;
+  }
+  .login-button {
+    padding: 5px 10px;
+  }
+}
+
+
+
+.glitch:before,
+.glitch:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+
+@keyframes glitch {
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+.glitch {
+  animation: glitch 1s infinite linear;
+  color: #fff; /* El color base del texto */
+  font-size: 50px;
+}
+
+.glitch:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+.glitch:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+
+@keyframes glitchBotom {
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}

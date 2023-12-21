@@ -1,0 +1,50 @@
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 20px; /* Ajusta el padding para hacer el Navbar más grande */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .menu-icon {
+    font-size: 1.5rem; /* Ajusta el tamaño del ícono del menú */
+    cursor: pointer;
+  }
+  
+  .navbar-user {
+    /* Estilos para la sección del nombre de usuario */
+    text-transform: uppercase;
+    position: relative; 
+    color: wheat;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .navbar-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%; /* Posiciona el menú desplegable justo debajo del elemento del usuario */
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 100; /* Asegúrate de que tiene un z-index alto para aparecer sobre otros elementos */
+    width: 200px;
+  }
+  
+  .navbar-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar-dropdown ul li a {
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  .navbar-dropdown ul li a:hover {
+    background-color: #ddd;
+  }

@@ -1,0 +1,18 @@
+.perfil-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .perfil-detalles {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .perfil-acciones button {
+    margin: 10px;
+    padding: 10px;
+    /* Añade más estilos para los botones aquí */
+  }
+  

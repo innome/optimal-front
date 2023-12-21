@@ -1,0 +1,22 @@
+.loader {
+    border: 6px solid #f3f3f3; /* Color del borde ligero */
+    border-top: 6px solid #000000; /* Color del borde superior (El color del "loader") */
+    border-radius: 50%; /* Hace que el DIV sea un círculo */
+    width: 60px; /* Tamaño del loader */
+    height: 60px;
+    animation: spin 3s linear infinite; /* Animación para girar el loader */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Usa el 100% del alto del contenedor padre */
+    width: 100%; /* Usa el 100% del ancho del contenedor padre */
+  }
+  

@@ -5,7 +5,7 @@ import '../css/App.css'; // Asegúrate de que la ruta de importación es correct
 function Header() {
   return (
     <header className="full-screen-header">
-    <h1 className="glitch" title='OptimAl' >OptimAl</h1>
+    <h1 className="glitch" title='HOMA' >HOMA</h1>
       {/* <button className="login-button">Login</button> */}
       <Link to="/login" className="login-button">Login</Link>
     </header>

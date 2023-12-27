@@ -82,3 +82,10 @@
     }
   }
   
+
+  .login-button2:disabled {
+    background-color: #ff0000; /* Cambia el color para indicar que está desactivado */
+    cursor: not-allowed;
+
+  }
+  

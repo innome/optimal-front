@@ -5,10 +5,11 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import DashboardContent from './components/content/Dashboard';
 import Profile from './components/content/Profile';
-import Settings from './components/content/Settings';
+import Homa from './components/content/Homa';
 import './css/App.css';
 
 function App() {
+
   return (
     <Router>
       <div>
@@ -17,10 +18,10 @@ function App() {
         <Routes>
         <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard" element={<DashboardContent />} />
+          <Route path="/dashboard" element={<Dashboard  />} />
+          <Route path="/main" element={<DashboardContent />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/homa/:id" element={<Homa />} />
         </Routes>
         {/* <Footer /> */}
       </div>

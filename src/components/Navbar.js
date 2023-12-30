@@ -5,8 +5,8 @@ import '../css/Navbar.css';
 
 const Navbar = ({ toggleSidebar, setActiveContent }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const navigate = useNavigate(); // Utiliza useNavigate aquí
-    const username = localStorage.getItem('username'); // Asume que el username se guarda con esta clave en localStorage
+    const navigate = useNavigate(); 
+    const username = localStorage.getItem('username'); 
 
     const toggleDropdown = () => {
         console.log('Toggle dropdown');
@@ -15,11 +15,11 @@ const Navbar = ({ toggleSidebar, setActiveContent }) => {
 
 
     const handleLogout = () => {
-        // Borra el token de localStorage y redirige al usuario al login
+        
         localStorage.removeItem('token');
         localStorage.removeItem('username');
-        navigate('/login'); // Usa navigate para redirigir
-        setIsDropdownOpen(false); // Cierra el menú desplegable
+        navigate('/login'); 
+        setIsDropdownOpen(false); 
     };
 
   return (

@@ -16,7 +16,7 @@
     /* Estilos para la sección del nombre de usuario */
     text-transform: uppercase;
     position: relative; 
-    color: wheat;
+    color: rgb(255, 255, 255);
     margin-right: 20px;
     cursor: pointer;
   }

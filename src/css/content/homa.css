@@ -1,0 +1,24 @@
+.modal-background {
+    position: fixed; /* Posicionamiento fijo en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupar toda la pantalla */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: flex; /* Usar Flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  }
+  
+  .modal-container {
+    background: white; /* Fondo blanco para el modal */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+    width: 500px; /* Ejemplo de ancho */
+    max-width: 100%; /* Para asegurar la responsividad */
+    height: auto; /* Altura automática según el contenido */
+    z-index: 1001; /* Asegúrate de que esté por encima del fondo */
+  }
+  

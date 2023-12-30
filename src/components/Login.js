@@ -36,8 +36,10 @@ function Login() {
           }
     
           const data = await response.json();
-          localStorage.setItem('token', data.access_token); // Guarda el token
-          localStorage.setItem('username', username); // Guarda el token
+          console.log(data);
+          localStorage.setItem('token', data.access_token); 
+          localStorage.setItem('username', username); 
+
           setIsLoggingIn(false);
           navigate('/dashboard');
           

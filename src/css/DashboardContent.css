@@ -1,3 +1,17 @@
+/* .dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
 .dashboard-container {
   display: flex;
   flex-wrap: wrap;
@@ -10,5 +24,22 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Añade más estilos aquí según tus necesidades */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alinea elementos verticalmente */
+  width: 300px; /* O un ancho específico que prefieras */
+}
+
+.card-title {
+  align-self: flex-start; /* Alinea el título a la izquierda */
+  margin-bottom: 10px; /* Espacio entre el título y el contenido */
+}
+
+.card-content {
+  align-self: flex-start; /* Alinea el contenido a la izquierda */
+}
+
+.card-footer {
+  align-self: flex-end; /* Alinea el estado a la derecha */
+  margin-top: 10px; /* Espacio entre el contenido y el footer */
 }

@@ -10,12 +10,12 @@ const Sidebar = ({ isOpen, setActiveContent  }) => {
         setSelected(name);
         setActiveContent(name);
     };
+
     return (
         <div className={isOpen ? 'sidebar open' : 'sidebar'}>
             <ul>
                 <li>
                     <a
-                        href="#default"
                         className={selected === 'default' ? 'selected' : ''}
                         onClick={() => handleItemClick('default') }
                     >
@@ -24,7 +24,6 @@ const Sidebar = ({ isOpen, setActiveContent  }) => {
                 </li>
                 <li>
                     <a
-                         href="#dashboard"
                          className={selected === 'dashboard' ? 'selected' : ''}
                          onClick={() => handleItemClick('dashboard') }
                     >
@@ -35,6 +34,9 @@ const Sidebar = ({ isOpen, setActiveContent  }) => {
             </ul>
         </div>
     );
+
+
+
 };
 
 export default Sidebar;

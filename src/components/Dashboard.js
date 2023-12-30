@@ -8,6 +8,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import ContentArea from './ContentArea';
 
+
 import Footer from './FooterContent';
 
 function Dashboard() {

@@ -22,7 +22,6 @@ const Dashboard = ({ setActiveContent }) => {
         });
 
         if (response.status === 200) {
-          console.log('Datos obtenidos:', response.data.data);
           setData(response.data.data);
         } else {
           console.error('Error en la respuesta del servidor:', response.status);
@@ -37,7 +36,6 @@ const Dashboard = ({ setActiveContent }) => {
   }, []);
 
   const handleCardClick = (item) => {
-    console.log('Item seleccionado:', item);
     setModalData(item);
     setIsModalOpen(true); 
   };

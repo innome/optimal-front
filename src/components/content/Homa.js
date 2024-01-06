@@ -19,7 +19,6 @@ const Homa = ({ data, closeModal }) => {
                 });
 
                 if (response.status === 200) {
-                    console.log('Datos del modal obtenidos:', response.data);
                     setModalData(response.data.data);
                 } else {
                     console.error('Error en la respuesta del servidor:', response.status);
@@ -42,9 +41,8 @@ const Homa = ({ data, closeModal }) => {
         e.preventDefault();
         try {
             const response = await axios.post(modalData.url, formData, {
-                headers: { }
+                headers: {}
             });
-            console.log('Formulario enviado:', response);
             closeModal(); // Cierra el modal después del envío exitoso
         } catch (error) {
             console.error('Error al enviar formulario:', error);
@@ -55,13 +53,12 @@ const Homa = ({ data, closeModal }) => {
     const renderFormFields = () => {
         if (!modalData || !modalData.labels) return null;
         const formattedLabels = modalData.labels.trim().startsWith('{')
-        ? modalData.labels.trim()
-        : `{${modalData.labels.trim()}}`;
-    
+            ? modalData.labels.trim()
+            : `{${modalData.labels.trim()}}`;
+
 
         let parsedLabels;
         try {
-            console.log('Labels:', modalData.labels);
             parsedLabels = JSON.parse(formattedLabels);
         } catch (error) {
             console.error('Error al parsear labels:', error);
@@ -82,13 +79,15 @@ const Homa = ({ data, closeModal }) => {
             ));
         } else {
             return Object.entries(parsedLabels).map(([key, value], index) => (
-                <div key={index}>
+                <div key={index} className="form-field">
                     <label htmlFor={key}>{key}</label>
                     <input
                         type="text"
                         name={key}
                         value={formData[key] || ''}
                         onChange={handleChange}
+                        placeholder={key}
+                        required
                     />
                 </div>
             ));
@@ -105,12 +104,20 @@ const Homa = ({ data, closeModal }) => {
                 {modalData && (
                     <>
                         <h3>{modalData.content}</h3>
+                        <br></br>
                         <p>{modalData.description}</p>
+                        <br></br>
                         <form onSubmit={handleSubmit}>
                             {renderFormFields()}
-                            <button type="submit">Enviar</button>
+                            <div className="form-field">
+                                <label htmlFor="file">Subir Archivo</label>
+                                <input type="file" name="file" />
+                            </div>
+                        <div className="modal-footer">
+                            <button onClick={closeModal}>Cerrar</button>
+                            <button type="submit" className="submit-button">Enviar</button>
+                        </div>
                         </form>
-                        <button onClick={closeModal}>Cerrsar</button>
                     </>
                 )}
             </div>

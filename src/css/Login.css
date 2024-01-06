@@ -13,7 +13,9 @@
     padding: 40px;
     background: transparent;
     border-radius: 10px;
-    box-shadow: 4px 4px 4px 4px rgba(255, 255, 255, 0.1);
+    /* box-shadow: 4px 4px 4px 4px rgba(255, 255, 255, 0.1); */
+    border: solid;
+    border-color: white;
     width: 100%;
     max-width: 400px; /* Ancho máximo para dispositivos grandes */
     color: white;

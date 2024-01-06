@@ -9,7 +9,6 @@ const Navbar = ({ toggleSidebar, setActiveContent }) => {
     const username = localStorage.getItem('username'); 
 
     const toggleDropdown = () => {
-        console.log('Toggle dropdown');
         setIsDropdownOpen(!isDropdownOpen);
     };
 

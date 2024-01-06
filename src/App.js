@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import DashboardContent from './components/content/Dashboard';
 import Profile from './components/content/Profile';
 import Homa from './components/content/Homa';
+import AddHoma from './components/content/AddHoma';
 import './css/App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/main" element={<DashboardContent />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/homa/:id" element={<Homa />} />
+          <Route path="/addhoma" element={<AddHoma  />} />
         </Routes>
         {/* <Footer /> */}
       </div>

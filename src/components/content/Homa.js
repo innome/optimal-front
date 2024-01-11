@@ -12,7 +12,7 @@ const Homa = ({ data, closeModal }) => {
         const fetchModalData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get(`http://129.148.24.238:8080/api/v1/homa/${data}`, {
+                const response = await axios.get(`http://127.0.0.1:8000/api/v1/homa/${data}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -43,6 +43,11 @@ const Homa = ({ data, closeModal }) => {
             const response = await axios.post(modalData.url, formData, {
                 headers: {}
             });
+            if (response.status === 200) {
+                setModalData(response.data.data);
+            } else {
+                console.error('Error en la respuesta del servidor:', response.status);
+            }
             closeModal(); // Cierra el modal después del envío exitoso
         } catch (error) {
             console.error('Error al enviar formulario:', error);

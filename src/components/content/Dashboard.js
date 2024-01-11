@@ -15,7 +15,7 @@ const Dashboard = ({ setActiveContent }) => {
       try {
         const token = localStorage.getItem('token');
 
-        const response = await axios.get('http://129.148.24.238:8080/api/v1/homa', {
+        const response = await axios.get('http://127.0.0.1:8000/api/v1/homa', {
           headers: {
             Authorization: `Bearer ${token}`
           }

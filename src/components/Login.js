@@ -23,7 +23,7 @@ function Login() {
         formData.append('password', password);
     
         try {
-          const response = await fetch('http://129.148.24.238:8080/token', {
+          const response = await fetch('http://127.0.0.1:8000/token', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded',

@@ -5,6 +5,7 @@ const Sidebar = ({ isOpen, setActiveContent  }) => {
 
 
     const [selected, setSelected] = useState(''); // Estado para manejar el elemento seleccionado
+    const userRole = localStorage.getItem('idr');
 
     const handleItemClick = (name) => {
         setSelected(name);
@@ -30,12 +31,22 @@ const Sidebar = ({ isOpen, setActiveContent  }) => {
                         Dashboard
                     </a>
                 </li>
+                {userRole === '1' && (
                 <li>
                     <a
-                         className={selected === 'AddHoma' ? 'selected' : ''}
-                         onClick={() => handleItemClick('AddHoma') }
+                        className={selected === 'AddHoma' ? 'selected' : ''}
+                        onClick={() => handleItemClick('AddHoma')}
                     >
                         Añadir Homa
+                    </a>
+                </li>
+                )}
+                <li>
+                    <a
+                        className={selected === 'AddUser' ? 'selected' : ''}
+                        onClick={() => handleItemClick('AddUser')}
+                    >
+                        Añadir Usuario
                     </a>
                 </li>
                 {/* Añade más elementos de menú según sea necesario */}

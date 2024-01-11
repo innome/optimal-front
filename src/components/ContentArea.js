@@ -4,6 +4,7 @@ import Settings from './content/Settings';
 import Dashboard from './content/Dashboard';
 import Default from './content/Default';
 import AddHoma from './content/AddHoma';
+import AddUser from './content/AddUser';
 import '../css/ContentArea.css';
 
 
@@ -22,6 +23,9 @@ const ContentArea = ({ activeContent }) => {
       break;
     case 'AddHoma':
       content = <AddHoma />;
+      break;
+    case 'AddUser':
+      content = <AddUser />;
       break;
     default:
       content = <Default />;

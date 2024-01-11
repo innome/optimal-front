@@ -41,7 +41,7 @@ const AddHoma = () => {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await axios.post('http://129.148.24.238:8080/api/v1/addHoma', dataToSend, {
+            const response = await axios.post('http://127.0.0.1:8000/api/v1/addHoma', dataToSend, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -77,7 +77,7 @@ const AddHoma = () => {
             <p>En el siguiente formulario puedes agregar nuevos HOMAS.</p>
 
             <form onSubmit={handleSubmit} className="add-homa-form">
-                <input required type="text" name="content" value={formData.content} onChange={handleChange} placeholder="Tittle" />
+                <input required type="text" name="content" value={formData.content} onChange={handleChange} placeholder="Title" />
                 <input required type="text" name="labels" value={formData.labels} onChange={handleChange} placeholder="Labels (separados por comas)" />
                 <input required type="number" name="version" value={formData.version} onChange={handleChange} placeholder="Version" />
                 <input required type="text" name="url" value={formData.url} onChange={handleChange} placeholder="URL" />

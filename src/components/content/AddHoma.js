@@ -41,7 +41,7 @@ const AddHoma = () => {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/v1/addHoma', dataToSend, {
+            const response = await axios.post('http://129.148.24.238:8080/api/v1/addHoma', dataToSend, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

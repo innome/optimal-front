@@ -9,7 +9,7 @@
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
     z-index: 1000; 
-    
+    position: fixed;
   }
   
   .modal-container {
@@ -24,6 +24,32 @@
     height: auto; /* Altura automática según el contenido */
     z-index: 1001; /* Asegúrate de que esté por encima del fondo */
   }
+
+  .loading-modal, .confirmation-modal {
+    overflow-y: auto;
+    position: absolute;
+    background: white;
+    max-height: 80%;
+    max-width: 100%;
+    width: 500px; /* Ancho */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    align-items: center; /* Centra verticalmente */
+    text-align: center; 
+    transform: translate(-50%, -50%);
+    z-index: 1002; 
+}
+
+.confirmation-modal .success-button{
+  max-height: 80% !important;
+  padding: 5px 15px !important;
+  width: 60%;
+  margin-top: 5%;
+}
 
 /* Estilizar la barra de desplazamiento (para navegadores basados en WebKit/Blink como Chrome, Safari, etc.) */
 .modal-container::-webkit-scrollbar {
@@ -96,6 +122,7 @@ button {
   background-color: #f8f8f8; /* color de fondo */
   cursor: pointer;
   border-radius: 4px;
+  color: black;
   transition: background-color 0.3s ease;
 }
 

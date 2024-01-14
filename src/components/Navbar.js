@@ -29,7 +29,7 @@ const Navbar = ({ toggleSidebar, setActiveContent }) => {
                 {isDropdownOpen && (
                     <div className="navbar-dropdown">
                         <ul>
-                            <li onClick={() => setActiveContent('profile')}><a  href="#close">Perfil</a></li>
+                            {/* <li onClick={() => setActiveContent('profile')}><a  href="#close">Perfil</a></li> */}
                             {/* <li onClick={() => setActiveContent('settings')}><a  href="#close">Configuración</a></li> */}
                             <li onClick={handleLogout}><a  href="#close">Cerrar sesión</a></li>
                         </ul>

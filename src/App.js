@@ -21,9 +21,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard  />} />
           <Route path="/main" element={<DashboardContent />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/homa/:id" element={<Homa />} />
-          <Route path="/addhoma" element={<AddHoma  />} />
         </Routes>
         {/* <Footer /> */}
       </div>

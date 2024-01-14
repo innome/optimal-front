@@ -41,6 +41,7 @@ const Sidebar = ({ isOpen, setActiveContent  }) => {
                     </a>
                 </li>
                 )}
+                {userRole === '1' && (
                 <li>
                     <a
                         className={selected === 'AddUser' ? 'selected' : ''}
@@ -49,6 +50,17 @@ const Sidebar = ({ isOpen, setActiveContent  }) => {
                         Añadir Usuario
                     </a>
                 </li>
+                )}
+                {userRole === '1' && (
+                <li>
+                    <a
+                        className={selected === 'seeHoma' ? 'selected' : ''}
+                        onClick={() => handleItemClick('seeHoma')}
+                    >
+                        Ver Homas
+                    </a>
+                </li>
+                )}
                 {/* Añade más elementos de menú según sea necesario */}
             </ul>
         </div>

@@ -10,28 +10,28 @@ const Dashboard = ({ setActiveContent }) => {
   const [modalData, setModalData] = useState(null); 
   const [isModalOpen, setIsModalOpen] = useState(false); 
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const token = localStorage.getItem('token');
-
-        const response = await axios.get('http://127.0.0.1:8000/api/v1/homa', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-
-        if (response.status === 200) {
-          setData(response.data.data);
-        } else {
-          console.error('Error en la respuesta del servidor:', response.status);
+  const fetchData = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      console.log(token);
+      const response = await axios.get('http://129.148.24.238:8080/api/v1/homa', {
+        headers: {
+          Authorization: `Bearer ${token}`
         }
-      } catch (error) {
-        console.error('Error al hacer la petición:', error);
-      }
-      setIsLoading(false);
-    };
+      });
 
+      if (response.status === 200) {
+        setData(response.data.data);
+      } else {
+        console.error('Error en la respuesta del servidor:', response.status);
+      }
+    } catch (error) {
+      console.error('Error al hacer la petición:', error);
+    }
+    setIsLoading(false);
+  };
+  
+  useEffect(() => {
     fetchData();
   }, []);
 

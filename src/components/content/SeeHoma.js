@@ -38,7 +38,7 @@ const SeeHoma = () => {
         setIsLoading(true);
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://127.0.0.1:8000/api/v1/homa', {
+            const response = await axios.get('http://129.148.24.238:8080/api/v1/homa', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -98,7 +98,7 @@ const SeeHoma = () => {
     const deleteHoma = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.delete(`http://127.0.0.1:8000/api/v1/delete/homa/${id}`, {
+            const response = await axios.delete(`http://129.148.24.238:8080/api/v1/delete/homa/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

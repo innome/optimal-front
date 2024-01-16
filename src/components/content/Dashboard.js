@@ -60,7 +60,7 @@ const Dashboard = ({ setActiveContent }) => {
               <p> {item.description}</p>
             </div>
             <div className="card-footer">
-              <p>Version: {item.version}</p>
+              <p>v{item.version}</p>
             </div>
           </div>
         </div>

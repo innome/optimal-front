@@ -2,7 +2,7 @@ import React from 'react';
 import Profile from './content/Profile';
 import Settings from './content/Settings';
 import Dashboard from './content/Dashboard';
-import Default from './content/Default';
+// import Default from './content/Default';
 import AddHoma from './content/AddHoma';
 import AddUser from './content/AddUser';
 import SeeHoma from './content/SeeHoma';
@@ -32,7 +32,7 @@ const ContentArea = ({ activeContent }) => {
       content = <SeeHoma />;
       break;
     default:
-      content = <Default />;
+      content = <Dashboard />;
   }
 
   return (

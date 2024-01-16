@@ -8,7 +8,7 @@
 /* Estilos generales */
 html, body {
   height: 100%;
-  overflow: hidden; /* Previene el scroll */
+  font-family: 'TT Hoves Pro', sans-serif;
 }
 
 /* Estilos para el header */
@@ -162,4 +162,23 @@ footer a {
   62%{
     transform: translate(-22px,5px) skew(21deg); 
   }
+}
+
+
+::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo del track de la barra de desplazamiento */
+  border-radius: 4px; /* Bordes redondeados para el track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color del thumb (la parte que se desplaza) */
+  border-radius: 4px; /* Bordes redondeados para el thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del thumb al pasar el mouse */
 }

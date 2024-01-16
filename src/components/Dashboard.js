@@ -8,8 +8,8 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import ContentArea from './ContentArea';
 
-
-import Footer from './FooterContent';
+// 
+// import Footer from './FooterContent';
 
 function Dashboard() {
 
@@ -37,7 +37,7 @@ function Dashboard() {
         <Sidebar isOpen={isSidebarOpen} setActiveContent={setActiveContent} />
         <ContentArea activeContent={activeContent}/>
      </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
   

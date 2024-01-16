@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { MdMenu } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import '../css/Navbar.css';
 
@@ -23,7 +22,7 @@ const Navbar = ({ toggleSidebar, setActiveContent }) => {
 
   return (
         <nav className="navbar">
-            <MdMenu className="menu-icon" onClick={toggleSidebar} />
+            <div className="navbar-logo">HOMA</div>
             <div className="navbar-user" onClick={toggleDropdown}>
                 {username}
                 {isDropdownOpen && (

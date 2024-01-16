@@ -7,10 +7,10 @@
     justify-content: space-between;
   }
   
-  .menu-icon {
-    font-size: 1.5rem; /* Ajusta el tamaño del ícono del menú */
+  /* .menu-icon {
+    font-size: 1.5rem; 
     cursor: pointer;
-  }
+  } */
   
   .navbar-user {
     /* Estilos para la sección del nombre de usuario */

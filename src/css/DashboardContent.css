@@ -16,31 +16,41 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
 }
 
 .card {
   border: 1px solid #ddd;
   margin: 10px;
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Alinea elementos verticalmente */
-  width: 300px; /* O un ancho específico que prefieras */
+  align-items: baseline;
+  width: 300px; 
+  height: 250px;
 }
 
 .card-title {
   align-self: flex-start; /* Alinea el título a la izquierda */
-  margin-bottom: 10px; /* Espacio entre el título y el contenido */
+  margin-bottom: 20px; /* Espacio entre el título y el contenido */
 }
 
 .card-content {
   align-self: flex-start; /* Alinea el contenido a la izquierda */
+  font-size: 90%;
+  p {
+    text-align: left !important;
+  }
 }
 
 .card-footer {
   align-self: flex-end; /* Alinea el estado a la derecha */
   margin-top: 10px; /* Espacio entre el contenido y el footer */
+  margin-bottom: 0px;
+  font-size: 12px;
 }

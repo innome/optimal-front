@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+    font-family: 'TT Hoves Pro';
+    src: url('./assets/fonts/tt_hoves_pro/TT\ Hoves\ Pro\ Bold\ Outline\ Trial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}

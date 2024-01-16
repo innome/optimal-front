@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/Sidebar.css';
 
-const Sidebar = ({ isOpen, setActiveContent  }) => {
+const Sidebar = ({ setActiveContent  }) => {
 
 
     const [selected, setSelected] = useState(''); // Estado para manejar el elemento seleccionado
@@ -13,7 +13,7 @@ const Sidebar = ({ isOpen, setActiveContent  }) => {
     };
 
     return (
-        <div className={isOpen ? 'sidebar open' : 'sidebar'}>
+        <div className='sidebar'>
             <ul>
                 <li>
                     <a

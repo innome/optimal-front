@@ -42,6 +42,7 @@
 
 .card-content {
   align-self: flex-start; /* Alinea el contenido a la izquierda */
+  font-family: 'Open Sans', sans-serif;
   font-size: 90%;
   p {
     text-align: left !important;

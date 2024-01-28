@@ -6,6 +6,7 @@ import Dashboard from './content/Dashboard';
 import AddHoma from './content/AddHoma';
 import AddUser from './content/AddUser';
 import SeeHoma from './content/SeeHoma';
+import SeeLogs from './content/SeeLogs';
 import '../css/ContentArea.css';
 
 
@@ -31,6 +32,9 @@ const ContentArea = ({ activeContent }) => {
     case 'seeHoma':
       content = <SeeHoma />;
       break;
+    case 'seeLogs':
+        content = <SeeLogs />;
+        break;
     default:
       content = <Dashboard />;
   }

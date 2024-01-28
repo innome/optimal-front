@@ -7,6 +7,8 @@ const AddUser = () => {
     const [enterprises, setEnterprises] = useState([]);
     const [isLoadingEnterprises, setIsLoadingEnterprises] = useState(true);
     const [formData, setFormData] = useState({
+        idu: localStorage.getItem('idu'),
+        ide: localStorage.getItem('cod_enterprise'),
         name: '',
         email: '',
         enterpriseId: '',
@@ -132,6 +134,8 @@ const AddUser = () => {
             {notification.message && <Notification message={notification.message} type={notification.type} />}
             <h1>Añadir Usuario</h1>
             <form onSubmit={handleSubmit} className="add-user-form">
+                <input required type="text" name="idu" value={formData.idu} onChange={handleChange} disabled hidden  />
+                <input required type="text" name="ide" value={formData.ide} onChange={handleChange} disabled hidden  />
                 <input required type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Nombre de usuario" />
                 <input required type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
                 {userRole === '1' && (

@@ -13,9 +13,7 @@ const Navbar = ({ toggleSidebar, setActiveContent }) => {
 
 
     const handleLogout = () => {
-        
-        localStorage.removeItem('token');
-        localStorage.removeItem('username');
+        localStorage.clear()
         navigate('/login'); 
         setIsDropdownOpen(false); 
     };

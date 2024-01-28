@@ -25,7 +25,8 @@ const AddHoma = () => {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
+    const idu = localStorage.getItem('idu');
+    const cod_empresa = localStorage.getItem('cod_enterprise');
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true); 
@@ -77,6 +78,8 @@ const AddHoma = () => {
             <p>En el siguiente formulario puedes agregar nuevos HOMAS.</p>
 
             <form onSubmit={handleSubmit} className="add-homa-form">
+                <input required type='text' name='idu' value={idu} onChange={handleChange} hidden/>
+                <input required type='text' name='cod_enterprise' value={cod_empresa} onChange={handleChange} hidden/>
                 <input required type="text" name="content" value={formData.content} onChange={handleChange} placeholder="Title" />
                 <input required type="text" name="labels" value={formData.labels} onChange={handleChange} placeholder="Labels (separados por comas)" />
                 <input required type="number" name="version" value={formData.version} onChange={handleChange} placeholder="Version" />

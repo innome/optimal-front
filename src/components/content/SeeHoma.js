@@ -38,7 +38,7 @@ const SeeHoma = () => {
         setIsLoading(true);
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://129.148.24.238:8080/api/v1/homa', {
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/homa', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -75,9 +75,9 @@ const SeeHoma = () => {
 
     const totalPages = Math.ceil(filteredData.length / recordsPerPage);
 
-    const handleEdit = (id) => {
-        console.log('Editar:', id);
-    };
+    // const handleEdit = (id) => {
+    //     console.log('Editar:', id);
+    // };
 
     const handleDelete = (id) => {
         setShowDeleteModal(true);
@@ -98,7 +98,10 @@ const SeeHoma = () => {
     const deleteHoma = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.delete(`http://129.148.24.238:8080/api/v1/delete/homa/${id}`, {
+            const idu = localStorage.getItem('idu');
+            const cod_empresa = localStorage.getItem('cod_enterprise');
+            const url = `http://127.0.0.1:8000/api/v1/delete/homa/${id}/${idu}/${cod_empresa}`;
+            const response = await axios.delete(url, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -173,7 +176,7 @@ const SeeHoma = () => {
                                 <td>{homa.created_at}</td>
                                 <td>{homa.description}</td>
                                 <td>
-                                    <button className='edit-btn' onClick={() => handleEdit(homa.id)}>Editar</button>
+                                    {/* <button hidden className='edit-btn' onClick={() => handleEdit(homa.id)}>Editar</button> */}
                                     <button className='delete-btn' onClick={() => handleDelete(homa.id)}>X</button>
                                 </td>
                             </tr>

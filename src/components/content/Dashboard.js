@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Loader from '../Loader';
 import axios from 'axios';
 import Homa from './Homa'
@@ -9,7 +10,7 @@ const Dashboard = ({ setActiveContent }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [modalData, setModalData] = useState(null); 
   const [isModalOpen, setIsModalOpen] = useState(false); 
-
+  const navigate = useNavigate();
   const fetchData = async () => {
     try {
       const token = localStorage.getItem('token');
@@ -26,7 +27,10 @@ const Dashboard = ({ setActiveContent }) => {
         console.error('Error en la respuesta del servidor:', response.status);
       }
     } catch (error) {
-      console.error('Error al hacer la petición:', error);
+      if (error.response.status === 401) {
+        localStorage.clear()
+        navigate('/login'); 
+      }
     }
     setIsLoading(false);
   };

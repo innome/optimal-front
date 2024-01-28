@@ -12,6 +12,8 @@ const Homa = ({ data, closeModal }) => {
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [notification, setNotification] = useState({ message: '', type: '' });
     const token = localStorage.getItem('token');
+    const idu = localStorage.getItem('idu');
+    const cod_empresa = localStorage.getItem('cod_enterprise');
 
     useEffect(() => {
         const fetchModalData = async () => {
@@ -21,9 +23,23 @@ const Homa = ({ data, closeModal }) => {
                         Authorization: `Bearer ${token}`
                     }
                 });
-
+    
                 if (response.status === 200) {
                     setModalData(response.data.data);
+                    const initialFormData = {
+                        idu: idu,
+                        cod_enterprise: cod_empresa,
+                        url: response.data.data.url,
+                        idh: response.data.data.id
+                    };
+    
+                    if (response.data.data.labels) {
+                        const labelsObj = JSON.parse(response.data.data.labels);
+                        Object.keys(labelsObj).forEach(key => {
+                            initialFormData[key] = ''; // Inicializar los campos adicionales
+                        });
+                    }
+                    setFormData(initialFormData);
                 } else {
                     console.error('Error en la respuesta del servidor:', response.status);
                 }
@@ -33,9 +49,9 @@ const Homa = ({ data, closeModal }) => {
                 setIsLoading(false);
             }
         };
-
+    
         fetchModalData();
-    }, [data, token]);
+    }, [data, token, idu, cod_empresa]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -45,8 +61,10 @@ const Homa = ({ data, closeModal }) => {
         e.preventDefault();
         setIsSubmitting(true);
         try {
-            const response = await axios.post(modalData.url, formData, {
-                headers: {}
+            const response = await axios.post(`http://129.148.24.238:8080/api/v1/execHoma`, formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
             });
             if (response.status === 200) {
                 setShowConfirmation(true);
@@ -78,23 +96,60 @@ const Homa = ({ data, closeModal }) => {
 
 
     const renderFormFields = () => {
-        if (!modalData || !modalData.labels) return null;
+        // Inicializa un arreglo para los campos del formulario, comenzando con id_user y cod_enterprise
+        let formFields = [
+            <div key="idu" className="form-field">
+                <input
+                    type="text"
+                    name="idu"
+                    value={idu}
+                    onChange={handleChange}
+                    required
+                    readOnly
+                    hidden
+                />
+            </div>,
+            <div key="cod_enterprise" className="form-field">
+                <input
+                    type="text"
+                    name="cod_enterprise"
+                    value={cod_empresa}
+                    onChange={handleChange}
+                    required
+                    readOnly
+                    hidden
+                />
+            </div>,
+            <div key="url" className="form-field">
+            <input
+                type="text"
+                name="url"
+                value={modalData.url}
+                onChange={handleChange}
+                required
+                readOnly
+                hidden
+            />
+        </div>
+        ];
+    
+        if (!modalData || !modalData.labels) return formFields;
+    
         const formattedLabels = modalData.labels.trim().startsWith('{')
             ? modalData.labels.trim()
             : `{${modalData.labels.trim()}}`;
-
-
+    
         let parsedLabels;
         try {
             parsedLabels = JSON.parse(formattedLabels);
         } catch (error) {
             console.error('Error al parsear labels:', error);
-            return null;
+            return formFields;
         }
-
-        if (Array.isArray(parsedLabels)) {
-            return parsedLabels.map((label, index) => (
-                <div key={index}>
+    
+        const additionalFields = Array.isArray(parsedLabels)
+            ? parsedLabels.map((label, index) => (
+                <div key={`label-${index}`} className="form-field">
                     <label htmlFor={label.name}>{label.name}</label>
                     <input
                         type="text"
@@ -103,10 +158,9 @@ const Homa = ({ data, closeModal }) => {
                         onChange={handleChange}
                     />
                 </div>
-            ));
-        } else {
-            return Object.entries(parsedLabels).map(([key, value], index) => (
-                <div key={index} className="form-field">
+            ))
+            : Object.entries(parsedLabels).map(([key, value], index) => (
+                <div key={`label-${index}`} className="form-field">
                     <label htmlFor={key}>{key}</label>
                     <input
                         type="text"
@@ -118,7 +172,9 @@ const Homa = ({ data, closeModal }) => {
                     />
                 </div>
             ));
-        }
+    
+        // Combina los campos predeterminados con los adicionales
+        return [...formFields, ...additionalFields];
     };
 
     const renderConfirmation = () => {

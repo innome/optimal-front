@@ -17,7 +17,7 @@ const useAuth = () => {
           return;
         }
 
-        const response = await axios.get('http://129.148.24.238:8080/users/me', {
+        const response = await axios.get('https://back.hom-a.xyz/users/me', {
           headers: {
             Authorization: `Bearer ${token}`
           }

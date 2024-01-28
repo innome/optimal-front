@@ -38,7 +38,7 @@ const SeeHoma = () => {
         setIsLoading(true);
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://129.148.24.238:8080/api/v1/homa', {
+            const response = await axios.get('https://back.hom-a.xyz/api/v1/homa', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -100,7 +100,7 @@ const SeeHoma = () => {
             const token = localStorage.getItem('token');
             const idu = localStorage.getItem('idu');
             const cod_empresa = localStorage.getItem('cod_enterprise');
-            const url = `http://129.148.24.238:8080/api/v1/delete/homa/${id}/${idu}/${cod_empresa}`;
+            const url = `https://back.hom-a.xyz/api/v1/delete/homa/${id}/${idu}/${cod_empresa}`;
             const response = await axios.delete(url, {
                 headers: {
                     Authorization: `Bearer ${token}`

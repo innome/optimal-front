@@ -57,7 +57,7 @@ const SeeLogs = () => {
         setIsLoading(true);
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://129.148.24.238:8080/api/v1/logs', {
+            const response = await axios.get('https://back.hom-a.xyz/api/v1/logs', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

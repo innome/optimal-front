@@ -18,7 +18,7 @@ const Homa = ({ data, closeModal }) => {
     useEffect(() => {
         const fetchModalData = async () => {
             try {
-                const response = await axios.get(`https://back.hom-a.xyz/api/v1/homa/${data}`, {
+                const response = await axios.get(`http://129.148.24.238:8080/api/v1/homa/${data}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -60,11 +60,9 @@ const Homa = ({ data, closeModal }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        try {
-            const response = await axios.post(`https://back.hom-a.xyz/api/v1/execHoma`, formData, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+        try  {
+            const response = await axios.post(modalData.url, formData, {
+                headers: {}
             });
             if (response.status === 200) {
                 setShowConfirmation(true);

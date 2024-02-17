@@ -35,7 +35,7 @@ const AddUser = () => {
     const fetchEnterprises = async () => {
         setIsLoadingEnterprises(true);
         try {   
-            const response = await axios.get('https://back.hom-a.xyz/api/v1/get_enterprises', {
+            const response = await axios.get('http://129.148.24.238:8080/api/v1/get_enterprises', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -71,7 +71,7 @@ const AddUser = () => {
         }
 
         try {
-            const response = await axios.post('https://back.hom-a.xyz/api/v1/add_user', formData, {
+            const response = await axios.post('http://129.148.24.238:8080/api/v1/add_user', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
